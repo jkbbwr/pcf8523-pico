@@ -1,0 +1,5 @@
+add_library(pcf8523 INTERFACE)
+file(GLOB FILES ./src/*.c ./src/*.h)
+target_sources(pcf8523 INTERFACE ${FILES})
+target_include_directories(pcf8523 INTERFACE ${CMAKE_CURRENT_LIST_DIR}/include)
+target_link_libraries(pcf8523 INTERFACE hardware_i2c)
